@@ -1,0 +1,24 @@
+@mixin flex($dir: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@function spaceIncr($increment: 1) {
+  $result: $increment * $padding;
+  @return $result;
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}

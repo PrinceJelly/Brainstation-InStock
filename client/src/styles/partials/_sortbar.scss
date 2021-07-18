@@ -1,0 +1,91 @@
+.sortbar {
+  //global sort bar styling (Add modifier class and style for specific page below)
+  width: 100%;
+  display: none;
+  background-color: $alpha-background;
+  &__sub-header {
+    @extend .label-text;
+    @include flex(row, flex-start);
+  }
+  &__act-header {
+    @include flex(row, flex-end);
+    width: 93px;
+    @include desktop {
+      width: 110px;
+    }
+  }
+  &__sort-icon {
+    margin-left: spaceIncr(0.5);
+    span {
+      @include flex();
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  @include tablet {
+    @include flex(row, space-between, flex-end, nowrap);
+    padding: spaceIncr(1.375) spaceIncr(4);
+  }
+  @include desktop {
+    padding: spaceIncr(1.375) spaceIncr(5);
+  }
+
+  //Styling for columns of warehouse details inventory list (i.e sizing to match details rows)
+
+  &--wh-details {
+    @include tablet {
+      //This is to individually size each "row" or data element in the list - creates the sized columns
+      // Also need to re-order the elements because of the different order on tablet and up
+      //inventory item
+      &:nth-of-type(1) {
+        width: 22.8125%;
+      }
+      //category
+      &:nth-of-type(2) {
+        width: 18.28125%;
+      }
+      //stock
+      &:nth-of-type(3) {
+        flex-grow: 1;
+      }
+      //quantity
+      &:nth-of-type(4) {
+        width: 14.0625%;
+      }
+      //warehouse
+      &:nth-of-type(5) {
+        width: 13.90625%;
+      }
+    }
+
+    @include desktop {
+      //This is to individually size each "row" or data element in the list - creates the sized columns
+      // Also need to re-order the elements because of the different order on tablet and up
+
+      //inventory item
+      &:nth-of-type(1) {
+        width: 23.1%;
+      }
+      //category
+      &:nth-of-type(2) {
+        width: 18.085%;
+      }
+      //stock
+      &:nth-of-type(3) {
+        max-width: 27.34%;
+      }
+      //quantity
+      &:nth-of-type(4) {
+        flex-grow: 1;
+        max-width: 18.085%;
+      }
+      //warehouse
+      &:nth-of-type(5) {
+        width: 13.90625%;
+        margin-right: auto;
+      }
+    }
+  }
+}

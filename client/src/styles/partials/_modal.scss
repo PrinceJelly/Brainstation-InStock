@@ -1,0 +1,79 @@
+.modal {
+	background-color: $page-primary-background;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	position: sticky;
+	width: 100% !important;
+	height: auto !important;
+
+	@include tablet {
+		background-color: $page-shadow;
+		position: fixed;
+		height: 100% !important;
+	}
+	&__section {
+		width: 100%;
+		padding: spaceIncr(3) spaceIncr(2);
+
+		@include tablet {
+			padding: spaceIncr(5) spaceIncr(8);
+			border-radius: 3px;
+			width: 42rem;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			position: relative;
+			background-color: $page-primary-background;
+		}
+	}
+	&__header {
+		margin-top: spaceIncr(3);
+		@extend .main-header;
+
+		@include tablet {
+			margin: 0;
+		}
+	}
+
+	&__content {
+		height: 30rem;
+
+		@include tablet {
+			height: 8rem;
+		}
+	}
+	&__icon-container {
+		@include flex(row, flex-end);
+	}
+
+	&__btn-container {
+		@include flex(row, space-between);
+		@include tablet {
+			@include flex(row, flex-end);
+		}
+	}
+	&__btn {
+		width: 45%;
+		cursor: pointer;
+
+		@include tablet {
+			margin-left: spaceIncr(2);
+			width: auto;
+		}
+	}
+	&__delete-button {
+		cursor: pointer;
+		padding: 0;
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		@include flex();
+		border: none;
+		outline: none;
+		background-color: transparent;
+		span {
+			@include flex();
+		}
+	}
+}

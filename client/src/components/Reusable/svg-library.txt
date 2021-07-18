@@ -1,0 +1,11 @@
+<Icon name="InStock-Logo.svg" />
+<Icon name="arrow_back-24px.svg" />
+<Icon name="arrow_drop_down-24px.svg" />
+<Icon name="chevron_right-24px.svg" />
+<Icon name="close-24px.svg" />
+<Icon name="delete_outline-24px.svg" />
+<Icon name="edit-24px.svg" />
+<Icon name="error-24px.svg" />
+<Icon name="search-24px.svg" />
+<Icon name="edit-24px-white.svg" />
+<Icon name="sort-24px.svg" />

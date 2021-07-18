@@ -1,0 +1,167 @@
+//styling global ul elelemt
+.inv-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+//styling the individual li elements
+.list-item {
+	padding: spaceIncr(2) spaceIncr(3);
+	border-bottom: 1px solid $page-border;
+	@include flex(row, flex-end, flex-start, wrap);
+
+	@include tablet {
+		&:hover {
+			background-color: $page-focus;
+		}
+	}
+
+	//details headers within the li
+	&__sub-header {
+		@extend .label-text;
+		margin: 0 0 spaceIncr(0.5);
+		@include tablet {
+			display: none;
+		}
+	}
+	//text below headers within the li
+	&__text {
+		@extend .para-text;
+	}
+
+	//containers for each header and element within the li
+	&__separator {
+		width: 50%;
+		margin-bottom: 16px;
+		@include tablet {
+			width: auto;
+			margin: 0;
+			//This is to individually size each "row" or data element in the list - creates the sized columns
+			// Also need to re-order the elements because of the different order on tablet and up
+
+			//inventory item
+			&:nth-of-type(1) {
+				order: 1;
+				width: 22.8125%;
+			}
+			//stock
+			&:nth-of-type(2) {
+				order: 3;
+				flex-grow: 1;
+			}
+			//inventory type
+			&:nth-of-type(3) {
+				width: 18.28125%;
+				order: 2;
+			}
+			//quantity
+			&:nth-of-type(4) {
+				order: 4;
+				width: 14.0625%;
+			}
+			//warehouse
+			&:nth-of-type(5) {
+				order: 5;
+				width: 13.90625%;
+			}
+		}
+
+		@include desktop {
+			//This is to individually size each "row" or data element in the list - creates the sized columns
+			// Also need to re-order the elements because of the different order on tablet and up
+
+			//inventory item
+			&:nth-of-type(1) {
+				width: 23.1%;
+			}
+			//stock
+			&:nth-of-type(2) {
+				max-width: 27.34%;
+			}
+			//inventory type
+			&:nth-of-type(3) {
+				width: 18.085%;
+			}
+			//quantity
+			&:nth-of-type(4) {
+				flex-grow: 1;
+				max-width: 18.085%;
+			}
+			//warehouse
+			&:nth-of-type(5) {
+				width: 13.90625%;
+				margin-right: auto;
+			}
+		}
+	}
+
+	//Link to the inventory item
+	&__inv-link {
+		@extend .nav-link;
+		color: $page-font-charlie;
+		text-decoration: none;
+		@include flex(row, flex-start);
+		&:hover {
+			.list-item__chev {
+				animation-name: forward-arrow-animate;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+		}
+	}
+
+	//delete and edit link buttons at the bottom of the li
+	&__del-edit-link {
+		@include flex();
+		@include tablet {
+			margin-left: spaceIncr(2);
+		}
+	}
+
+	//delete and edit icons
+	&__del-edit-icon {
+		span {
+			@include flex();
+		}
+		svg {
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	//small chevron beside the inventory item
+	&__chev {
+		margin-left: spaceIncr(0.5);
+		span {
+			@include flex();
+		}
+		svg {
+			height: 20px;
+			width: 20px;
+		}
+	}
+
+	//container with the modify links (edit and delete)
+	&__modify-container {
+		width: 100%;
+		@include flex(row, space-between);
+		order: 10; //Always at the end order just has to be higher than everything else
+		@include tablet {
+			@include flex(row, flex-end);
+			width: 93px;
+		}
+		@include desktop {
+			width: 110px;
+		}
+	}
+
+	@include tablet {
+		@include flex(row, space-between, center, nowrap);
+		padding: spaceIncr(2) spaceIncr(4);
+	}
+	@include desktop {
+		padding: spaceIncr(2) spaceIncr(5);
+	}
+}

@@ -1,0 +1,281 @@
+// * {
+//   border: springgreen 1px solid;
+// }
+
+.warehouse {
+	border-radius: 3px;
+	position: relative;
+	background-color: $page-primary-background;
+	@extend .add-shadow;
+	top: spaceIncr(-8);
+
+	&__list {
+		@extend .page-list;
+	}
+	&__item {
+		padding: spaceIncr() spaceIncr(2);
+		border-bottom: 1px solid $page-border;
+
+		@include tablet {
+			padding: spaceIncr(2) spaceIncr(4);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		@include desktop {
+			padding: spaceIncr(2) spaceIncr(5);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		@include tablet {
+			&:hover {
+				background-color: $page-focus;
+			}
+		}
+	}
+
+	&__input-container {
+		width: 100%;
+		@include tablet {
+			width: auto;
+		}
+	}
+
+	&__header,
+	.component-head {
+		@include flex(column);
+		@include tablet {
+			@include flex(row, space-between);
+			border: none;
+		}
+	}
+
+	&__details {
+		@include tablet {
+			width: auto;
+			margin: 0;
+			//warehouse
+			&:nth-of-type(1) {
+				width: 20.9%;
+			}
+			//address
+			&:nth-of-type(2) {
+				width: 16.8%;
+			}
+			//contact-name
+			&:nth-of-type(3) {
+				max-width: 16.8%;
+			}
+			//contact information
+			&:nth-of-type(4) {
+				width: 28.1%;
+			}
+		}
+
+		@include desktop {
+			//warehouse
+			&:nth-of-type(1) {
+				width: 15.1%;
+			}
+			//address
+			&:nth-of-type(2) {
+				width: 26.085%;
+			}
+			//contact-name
+			&:nth-of-type(3) {
+				max-width: 15.5%;
+			}
+
+			&:nth-of-type(4) {
+				max-width: 17.5%;
+			}
+		}
+	}
+
+	@include tablet {
+		top: spaceIncr(-11.625);
+	}
+}
+.warehouse-list {
+	&__separator {
+		margin: spaceIncr(2) spaceIncr(0);
+
+		@include tablet {
+			margin: 0;
+			width: auto;
+
+			&:nth-of-type(n) {
+				width: 39.9%;
+			}
+			//stock
+			&:nth-of-type(2) {
+				width: 38%;
+			}
+			//inventory type
+			&:nth-of-type(3) {
+				width: 16.87%;
+			}
+			//quantity
+			&:nth-of-type(4) {
+				width: 26.35%;
+			}
+		}
+
+		@include desktop {
+			width: 100%;
+
+			&:nth-of-type(1) {
+				width: 50.582%;
+			}
+			//address
+			&:nth-of-type(2) {
+				width: 100%;
+			}
+			//contact-name
+			&:nth-of-type(3) {
+				width: 16.992%;
+			}
+			//contact information
+			&:nth-of-type(4) {
+				width: 16.992%;
+			}
+		}
+	}
+
+	&__separator--link {
+		@include tablet {
+			margin-right: 14.5%;
+		}
+
+		@include desktop {
+			margin-right: 10%;
+		}
+	}
+
+	&__seperator--name {
+		@include desktop {
+			margin-right: 10%;
+		}
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		padding: spaceIncr(1);
+
+		@include tablet {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			width: stretch;
+			padding: 0;
+		}
+		@include desktop {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			width: stretch;
+			padding: 0;
+		}
+	}
+	&__col-1 {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		width: 45%;
+
+		@include tablet {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: center;
+			width: 44.5%;
+		}
+		@include desktop {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			width: 50%;
+		}
+	}
+
+	&__col-2 {
+		display: flex;
+		flex-direction: column;
+
+		@include tablet {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: center;
+			width: 50%;
+			span:nth-of-type(2) {
+				flex-grow: 1;
+			}
+		}
+		@include desktop {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			width: 50%;
+			padding-left: spaceIncr(2);
+		}
+	}
+	&__item {
+		@extend .para-text;
+		font-style: normal;
+	}
+
+	&__item--link {
+		@include flex;
+		@extend .nav-link;
+		justify-content: left;
+		text-decoration: none;
+		color: $page-font-charlie;
+		&:visited {
+			@extend .nav-link;
+			color: $page-font-charlie;
+		}
+		&:hover {
+			.warehouse-list__chev-icon {
+				animation-name: forward-arrow-animate;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+		}
+	}
+
+	&__sub-header {
+		@extend .label-text;
+		margin: 0 0 spaceIncr(0.5);
+		text-transform: uppercase;
+		@include tablet {
+			display: none;
+		}
+	}
+
+	&__chev-icon {
+		margin-left: spaceIncr(0.5);
+		span {
+			@include flex();
+		}
+		svg {
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	&__icon-container {
+		display: block;
+		@include desktop {
+			display: flex;
+		}
+	}
+
+	&__icon-seperator {
+		@include flex(row, space-between);
+
+		@include tablet {
+			@include flex(row, right);
+		}
+	}
+}

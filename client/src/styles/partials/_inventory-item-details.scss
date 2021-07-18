@@ -1,0 +1,61 @@
+.inv-details {
+  padding: spaceIncr(2) spaceIncr(3);
+  @include flex(column);
+  &__sub-header {
+    @extend .label-text;
+    margin: 0 0 spaceIncr(0.5);
+  }
+  &__text {
+    @extend .para-text;
+  }
+
+  &__container-left {
+    width: 100%;
+    margin-bottom: spaceIncr(2);
+    @include flex(column, flex-start, flex-start);
+    span {
+      &:first-of-type {
+        width: 100%;
+        margin-bottom: spaceIncr(2);
+        @include tablet {
+          margin-bottom: spaceIncr(4);
+        }
+      }
+    }
+
+    @include tablet {
+      flex-basis: 50%;
+      border-right: 1px solid $page-border;
+      margin-bottom: 0;
+      padding-right: spaceIncr(3);
+    }
+  }
+
+  &__container-right {
+    width: 100%;
+    @include flex(row, flex-start, flex-start, wrap);
+    span {
+      width: 50%;
+      margin-bottom: spaceIncr(2.5);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      @include tablet {
+        margin-bottom: spaceIncr(4);
+      }
+    }
+
+    @include tablet {
+      flex-basis: 50%;
+      padding-left: spaceIncr(5);
+    }
+  }
+
+  @include tablet {
+    padding: spaceIncr(3) spaceIncr(4);
+    @include flex(row, space-between, flex-start);
+  }
+  @include desktop {
+    padding: spaceIncr(3) spaceIncr(5);
+  }
+}

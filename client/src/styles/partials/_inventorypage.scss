@@ -1,0 +1,20 @@
+.inventory {
+	border-radius: 3px;
+	position: relative;
+	background-color: $page-primary-background;
+	@extend .add-shadow;
+	top: spaceIncr(-8);
+
+	&__header,
+	.component-head {
+		@include flex(column);
+		@include tablet {
+			@include flex(row, space-between);
+			border: none;
+		}
+	}
+
+	@include tablet {
+		top: spaceIncr(-11.625);
+	}
+}

@@ -1,0 +1,40 @@
+.search-bar {
+	border: $input-border 1px solid;
+	margin: spaceIncr(2) spaceIncr(0);
+	width: 100%;
+	height: 36px;
+	padding: spaceIncr() spaceIncr(2);
+	font-family: "Titillium Web";
+	border-radius: 20px;
+	outline: none;
+	background: url("../assets/icons/search-24px.svg") no-repeat 95% 50%;
+	::placeholder {
+		color: $input-placeholder;
+	}
+	@include tablet {
+		height: 38px;
+		margin: 10px;
+		width: 11.5625rem;
+		margin: 0 spaceIncr(2) 0 0;
+
+		&:focus {
+			border: $input-border-focus 1px solid;
+		}
+		&:hover {
+			border: $input-border-focus 1px solid;
+		}
+	}
+
+	@include desktop {
+		height: 38px;
+		margin: 0 spaceIncr(2) 0 0;
+		width: 17.125rem;
+
+		&:focus {
+			border: $input-border-focus 1px solid;
+		}
+		&:hover {
+			border: $input-border-focus 1px solid;
+		}
+	}
+}

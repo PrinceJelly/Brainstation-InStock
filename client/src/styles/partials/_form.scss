@@ -1,0 +1,277 @@
+.form {
+	@include flex(column, flex-start, stretch);
+
+	@include tablet {
+		@include flex(row, space-between, flex-start, wrap);
+		margin: spaceIncr(3) 0 0;
+	}
+
+	&__subheader {
+		@extend .sub-header;
+		margin: 0 0 spaceIncr(3);
+		@include tablet {
+			margin: 0 0 spaceIncr(4);
+		}
+	}
+
+	&__left {
+		@include flex(column, flex-start, stretch);
+		padding: spaceIncr(2) spaceIncr(3) spaceIncr();
+		border-bottom: 1px solid $page-border;
+
+		@include tablet {
+			border-bottom: none;
+			border-right: 1px solid $page-border;
+			padding: 0 spaceIncr(4);
+			flex-basis: 50%;
+		}
+
+		@include desktop {
+			padding: 0 spaceIncr(5);
+		}
+	}
+
+	&__right {
+		@include flex(column, flex-start, stretch);
+		padding: spaceIncr(2) spaceIncr(3) 0;
+
+		@include tablet {
+			flex-basis: 50%;
+			padding: 0 spaceIncr(4);
+		}
+
+		@include desktop {
+			padding: 0 spaceIncr(5);
+		}
+	}
+
+	&__buttons {
+		@include flex(row, space-between);
+		background-color: $page-tertiary-background;
+		padding: spaceIncr(2) spaceIncr(3);
+		width: 100%;
+		@include tablet {
+			justify-content: flex-end;
+			margin-top: spaceIncr(3);
+		}
+	}
+
+	&__cancelbutton {
+		@include flex();
+		width: 47.1186%;
+		@extend .nav-link;
+		@include tablet {
+			width: auto;
+			margin-right: spaceIncr(2);
+		}
+	}
+
+	&__savebutton {
+		@include flex();
+		width: 47.1186%;
+		@extend .nav-link;
+		@include tablet {
+			width: auto;
+		}
+	}
+
+	&__forminput {
+		background-color: $input-background;
+		border-radius: 20px;
+		border: 1px solid $input-border;
+		height: 36px;
+		padding: spaceIncr() spaceIncr(2);
+		font-family: "Titillium Web";
+		@extend .para-text;
+		margin-top: spaceIncr(0.5);
+		width: 100%;
+
+		&:focus {
+			outline: none;
+			border: 1px solid $input-border-focus;
+		}
+
+		@include tablet {
+			height: 38px;
+		}
+	}
+
+	&__text-area {
+		resize: none;
+		height: 120px;
+	}
+
+	&__drop-down {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-image: url("../assets/icons/arrow_drop_down-24px.svg");
+		background-repeat: no-repeat;
+		background-position: 95%;
+
+		&::-ms-expand {
+			display: none;
+		}
+
+		&:active {
+			background-image: url("../assets/icons/arrow_drop_down-active.svg");
+		}
+		&:focus {
+			background-image: url("../assets/icons/arrow_drop_down-active.svg");
+		}
+	}
+
+	&__labels {
+		@extend .nav-link;
+		margin-bottom: spaceIncr(2);
+		width: 100%;
+		@include flex(row, flex-start, flex-start, wrap);
+
+		@include tablet {
+			margin-bottom: spaceIncr(3);
+			&:last-of-type {
+				margin-bottom: spaceIncr();
+			}
+		}
+	}
+
+	&__radio-container {
+		width: 100%;
+		@include flex(row, space-between);
+		color: $page-font-bravo;
+
+		input[type="radio"]:checked + label {
+			color: $alpha-font;
+		}
+
+		@include tablet {
+			@include flex(row, flex-start);
+		}
+	}
+
+	&__radio-label {
+		@include flex(row, flex-start);
+		flex-basis: 50%;
+		@extend .para-text;
+		font-weight: 400;
+		@include tablet {
+			flex-basis: auto;
+			margin-right: spaceIncr(5);
+		}
+	}
+
+	&__radio-btn {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 16px;
+		height: 16px;
+		margin: 0 spaceIncr() 0 0;
+		@include flex();
+		border: 1px solid $page-font-bravo;
+		border-radius: 100%;
+		&:focus {
+			outline: none;
+			border: 1px solid $page-font-bravo;
+			border-radius: 100%;
+		}
+
+		&:active {
+			outline: none;
+			border: 1px solid $page-font-bravo;
+			border-radius: 100%;
+		}
+
+		&:checked {
+			border-color: $input-border-focus;
+		}
+
+		&:checked::before {
+			content: "";
+			display: block;
+			width: 6px;
+			height: 6px;
+			border-radius: 100%;
+			background-color: $input-border-focus;
+		}
+	}
+}
+
+.validationerror {
+	& > input {
+		border: 1px solid red;
+		position: relative;
+	}
+
+	&::after {
+		content: "This field is required";
+		padding-left: 18.66px;
+		@extend .validation-text;
+		margin-top: spaceIncr(0.5);
+		display: block;
+		position: relative;
+		color: $red;
+		background-image: url("../assets/icons/error-24px.svg");
+		background-repeat: no-repeat;
+		background-position: 0 center;
+		background-size: 13.33px 13.33px;
+	}
+}
+
+.emailvalidationerror {
+	& > input {
+		border: 1px solid red;
+		position: relative;
+	}
+
+	&::after {
+		content: "This field is required. A valid '@domain.com' is also required.";
+		padding-left: 18.66px;
+		@extend .validation-text;
+		margin-top: spaceIncr(0.5);
+		display: block;
+		position: relative;
+		color: $red;
+		background-image: url("../assets/icons/error-24px.svg");
+		background-repeat: no-repeat;
+		background-position: 0 center;
+		background-size: 13.33px 13.33px;
+	}
+}
+
+.phonevalidationerror {
+	& > input {
+		border: 1px solid red;
+		position: relative;
+	}
+
+	&::after {
+		content: "This field is required. The provided phone number must also strictly follow the following format: x (xxx) xxx-xxxx";
+
+		padding-left: 18.66px;
+		@extend .validation-text;
+		margin-top: spaceIncr(0.5);
+		display: block;
+		position: relative;
+		color: $red;
+		background-image: url("../assets/icons/error-24px.svg");
+		background-repeat: no-repeat;
+		background-position: 0 center;
+		background-size: 13.33px 13.33px;
+	}
+}
+
+.rr {
+	background-image: url("https://media1.tenor.com/images/23aeaaa34afd591deee6c163c96cb0ee/tenor.gif?itemid=7220603");
+	height: 80vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&__header {
+		@extend .main-header;
+		color: white;
+		text-align: center;
+		padding: 0;
+	}
+}

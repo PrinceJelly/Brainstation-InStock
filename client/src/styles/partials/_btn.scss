@@ -1,0 +1,149 @@
+.btn {
+	cursor: pointer;
+}
+
+.btn__cancel {
+	text-decoration: none;
+	color: $button-cancel-font;
+	background-color: $button-cancel;
+	border-radius: 20px;
+	padding: spaceIncr();
+	height: 36px;
+	border: 1px solid $button-cancel-border;
+	outline: none;
+	@include tablet {
+		height: 38px;
+		padding: spaceIncr() spaceIncr(2);
+	}
+
+	&:focus {
+		color: $button-cancel--hover-font;
+		border: $button-cancel--hover-border 1px solid;
+		border-radius: 20px;
+		outline: none;
+	}
+
+	&:hover {
+		color: $button-cancel--hover-font;
+		border: $button-cancel--hover-border 1px solid;
+		border-radius: 20px;
+		outline: none;
+	}
+}
+
+.btn__edit {
+	color: $button-edit-font;
+	background-color: $button-edit;
+	border-radius: 20px;
+	height: 36px;
+	padding: spaceIncr();
+	outline: none;
+	border: none;
+
+	@include tablet {
+		height: 38px;
+		padding: spaceIncr() spaceIncr(2);
+	}
+
+	&:focus {
+		background-color: $button-edit--hover;
+		border-radius: 20px;
+		outline: none;
+		border: none;
+	}
+	&:hover {
+		background-color: $button-edit--hover;
+		outline: none;
+		border: none;
+	}
+}
+
+.btn__save {
+	color: $button-save-font;
+	background-color: $button-save;
+	border-radius: 20px;
+	height: 36px;
+	padding: spaceIncr() spaceIncr(2);
+	outline: none;
+	border: none;
+
+	@include tablet {
+		height: 38px;
+	}
+
+	&:focus {
+		background-color: $button-save--hover;
+		border-radius: 20px;
+		outline: none;
+		border: none;
+	}
+
+	&:hover {
+		background-color: $button-save--hover;
+		outline: none;
+		border: none;
+	}
+}
+
+.btn__delete {
+	color: $button-delete-font;
+	background-color: $button-delete;
+	border-radius: 20px;
+	height: 36px;
+	//mobile has height of 36px
+	padding: spaceIncr();
+	outline: none;
+	border: none;
+	@include tablet {
+		height: 38px;
+		padding: spaceIncr() spaceIncr(2);
+	}
+	&:focus {
+		background-color: $button-delete--hover;
+		outline: none;
+		border: none;
+	}
+	&:hover {
+		background-color: $button-delete--hover;
+		outline: none;
+		border: none;
+	}
+}
+
+.list-item__delete-button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	padding: 0;
+	margin-right: spaceIncr(2);
+}
+
+.btn__add {
+	@extend .nav-link;
+	color: $button-save-font;
+	background-color: $button-save;
+	border-radius: 20px;
+	height: 36px;
+	width: 100%;
+	padding: spaceIncr() spaceIncr(2);
+	outline: none;
+	border: none;
+
+	@include tablet {
+		height: 38px;
+		width: auto;
+	}
+
+	&:focus {
+		background-color: $button-save--hover;
+		border-radius: 20px;
+		outline: none;
+		border: none;
+	}
+
+	&:hover {
+		background-color: $button-save--hover;
+		outline: none;
+		border: none;
+	}
+}

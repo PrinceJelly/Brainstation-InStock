@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+//----------------------------Global tag variables----------------------------------------------
+body {
+	margin: 0;
+	font-family: "Titillium Web", sans-serif;
+	color: $alpha-font;
+	background-color: $page-secondary-background;
+}
+
+button {
+	font-family: "Titillium Web", sans-serif;
+}
+
+//-----------------------------------------Animation---------------------------------------------
+
+@keyframes back-arrow-animate {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-4px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes forward-arrow-animate {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(4px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

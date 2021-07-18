@@ -1,0 +1,69 @@
+//Base spacing increment for site (Padding & Margins)
+$padding: 8px;
+
+//colour reference
+$instock-black: #13182c;
+$graphite: #232940;
+$instock-indigo: #2e66e5;
+$light-grey: #f7f8f9;
+$white: #ffffff;
+$cloud: #bdc5d5;
+$slate: #5c667e;
+$green: #158463;
+$red: #c94515;
+
+//mainpage colours
+$alpha-background: $light-grey;
+$alpha-font: $instock-black;
+
+//header colours
+$header-background: $graphite;
+$navigation-focus: $instock-black;
+$font-navigation-active: $white;
+$font-navigation-inactive: $cloud;
+
+//primary components
+$page-primary-background: $white;
+$page-secondary-background: $light-grey;
+$page-tertiary-background: rgba(247, 248, 249, 0.7);
+$page-focus: rgba(46, 102, 230, 0.07);
+$page-focus-border: $instock-indigo;
+$page-border: $cloud;
+$page-shadow: rgba(19, 24, 44, 0.7);
+
+//primary component fonts
+$page-font-bravo: $slate;
+$page-font-charlie: $instock-indigo;
+
+//secondary component colours
+$page-echo: rgba(21, 132, 99, 0.07);
+$page-delta: rgba(201, 69, 21, 0.07);
+$page-font-echo: $green;
+$page-font-delta: $red;
+
+//prompt button colors
+$button-delete: $red;
+$button-delete-font: $white;
+$button-delete--hover: $instock-black;
+
+$button-cancel: $white;
+$button-cancel-font: $slate;
+$button-cancel--hover-font: $instock-indigo;
+$button-cancel-border: $cloud;
+$button-cancel--hover-border: $instock-indigo;
+
+$button-edit: $instock-indigo;
+$button-edit-font: $white;
+$button-edit--hover: $instock-black;
+
+$button-save: $instock-indigo;
+$button-save-font: $white;
+$button-save--hover: $graphite;
+
+//input form
+$input-border-focus: $instock-indigo;
+$input-border: $cloud;
+$input-border-required: $red;
+$input-placeholder: $slate;
+$input-required: $red;
+$input-background: $white;

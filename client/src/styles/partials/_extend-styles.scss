@@ -1,0 +1,92 @@
+//-------------------------------Library of all styles used for extending------------------------
+.nav-link {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.main-header {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  margin: 0;
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.add-shadow {
+  box-shadow: 0px 2px 5px $page-shadow;
+}
+
+.label-text {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: $page-font-bravo;
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+.para-text {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  margin: 0;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.sub-header {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.in-stock {
+  @extend .label-text;
+  display: inline-block;
+  background-color: $page-echo;
+  color: $page-font-echo;
+  border-radius: 20px;
+  padding: spaceIncr(0.5) spaceIncr();
+}
+
+.oof-stock {
+  @extend .label-text;
+  display: inline-block;
+  background-color: $page-delta;
+  color: $page-font-delta;
+  border-radius: 20px;
+  padding: spaceIncr(0.5) spaceIncr();
+}
+
+.validation-text {
+  font-weight: 400;
+  font-size: 0.6875rem;
+  line-height: 1rem;
+
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+.page-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
