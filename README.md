@@ -1,5 +1,6 @@
 
 # Instock
+![image](https://user-images.githubusercontent.com/71748268/185726552-a5b7dbd4-0897-4612-873b-bee526c33c98.png)
 
 Instock is a responsive website for companies to organize their products and determine whether or not it’s in stock or not. 
 
